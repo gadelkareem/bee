@@ -148,9 +148,7 @@ func startDelveDebugger(addr string, ch chan int) int {
 	server := rpccommon.NewServer(&service.Config{
 		Listener:    listener,
 		AcceptMulti: true,
-		AttachPid:   0,
 		APIVersion:  2,
-		WorkingDir:  ".",
 		ProcessArgs: []string{abs},
 	})
 	if err := server.Run(); err != nil {
